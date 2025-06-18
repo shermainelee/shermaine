@@ -6,7 +6,7 @@ guests = pd.read_csv('guests.csv')
 slug_to_guest = {row['slug']: row for _, row in guests.iterrows()}
 
 # URL param handling
-query_params = st.experimental_get_query_params()
+query_params = st.query_params()
 slug = query_params.get("guest", [None])[0]
 
 if slug and slug in slug_to_guest:

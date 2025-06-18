@@ -11,6 +11,10 @@ slug = query_params.get("guest", [None])[0]
 
 if slug and slug in slug_to_guest:
     guest = slug_to_guest[slug]
+    st.write("Query params:", query_params)
+    st.write("Slug:", slug)
+    st.write("Available slugs:", list(slug_to_guest.keys()))
+
     st.title(f"🎉 RSVP for {guest['name']}")
     st.markdown(f"**{guest['message']} {guest['emoji']}**")
 
@@ -26,4 +30,5 @@ if slug and slug in slug_to_guest:
 
 else:
     st.title("Oops!")
-    st.write("We couldn't find your invite. Double-check your link!")
+    st.write("Error")
+
